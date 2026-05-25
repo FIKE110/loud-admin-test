@@ -5,6 +5,7 @@ import DashboardLayout from "./components/DashboardLayout"
 import DashboardPage from "./components/DashboardPage"
 import UsersPage from "./components/UsersPage"
 import PostsPage from "./components/PostsPage"
+import BirthdayPostsPage from "./components/BirthdayPostsPage"
 import NotFound from "./components/NotFound"
 
 export const router = createBrowserRouter([
@@ -23,6 +24,7 @@ export const router = createBrowserRouter([
       { index: true, element: <DashboardPage /> },
       { path: "users", element: <UsersPage /> },
       { path: "posts", element: <PostsPage /> },
+      { path: "birthday-posts", element: <BirthdayPostsPage /> },
     ],
   },
   {
