@@ -1,5 +1,6 @@
 import { createBrowserRouter, Navigate } from "react-router-dom"
 import LoginPage from "./components/LoginPage"
+import ResetPasswordPage from "./components/ResetPasswordPage"
 import NotFound from "./components/NotFound"
 
 export const router = createBrowserRouter([
@@ -10,6 +11,10 @@ export const router = createBrowserRouter([
   {
     path: "/login",
     element: <LoginPage />,
+  },
+  {
+    path: "/reset-password",
+    element: <ResetPasswordPage />,
   },
   {
     path: "*",

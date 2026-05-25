@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom"
+
 export default function LoginForm() {
   return (
     <div className="flex min-h-screen w-1/2 flex-col justify-center bg-[#FEFEFE] px-16">
@@ -81,12 +83,12 @@ export default function LoginForm() {
           </div>
 
           <div className="text-right">
-            <a
-              href="#"
+            <Link
+              to="/reset-password"
               className="text-sm font-medium text-[#2561EE] hover:underline"
             >
               Forgot your password?
-            </a>
+            </Link>
           </div>
 
           <button

@@ -1,11 +1,38 @@
-const StatCard = ({ value, label }: { value: string; label: string }) => (
+type Stat = { value: string; label: string }
+
+type HeadingSegment = { text: string; highlight?: boolean }
+
+const defaultHeading: HeadingSegment[] = [
+  { text: "Command your " },
+  { text: "Loud!", highlight: true },
+  { text: " community" },
+]
+
+const defaultSubtext =
+  "The complete command center for Loud! — moderate content, manage users, and keep the community thriving."
+
+const defaultStats: Stat[] = [
+  { value: "124K", label: "TOTAL USERS" },
+  { value: "892K", label: "TOTAL POSTS" },
+  { value: "99.8%", label: "UPTIME" },
+]
+
+const StatCard = ({ value, label }: Stat) => (
   <div className="rounded-2xl border border-white/10 bg-white/5 px-6 py-5 backdrop-blur-md">
     <p className="text-2xl font-bold text-white">{value}</p>
     <p className="mt-1 text-xs tracking-wide text-white/60">{label}</p>
   </div>
 )
 
-export default function BrandPanel() {
+export default function BrandPanel({
+  heading = defaultHeading,
+  subtext = defaultSubtext,
+  stats = defaultStats,
+}: {
+  heading?: HeadingSegment[]
+  subtext?: string
+  stats?: Stat[]
+}) {
   return (
     <div className="relative flex min-h-screen w-1/2 flex-col overflow-hidden bg-[#050F2E] p-12">
       <div
@@ -43,19 +70,25 @@ export default function BrandPanel() {
 
         <div className="mt-24 max-w-md">
           <h1 className="text-4xl font-bold leading-tight text-white md:text-5xl">
-            Command your{" "}
-            <span className="text-[#2561EE]">Loud!</span> community
+            {heading.map((seg, i) =>
+              seg.highlight ? (
+                <span key={i} className="text-[#2561EE]">
+                  {seg.text}
+                </span>
+              ) : (
+                <span key={i}>{seg.text}</span>
+              ),
+            )}
           </h1>
           <p className="mt-6 text-base leading-relaxed text-white/60">
-            The complete command center for Loud! — moderate content, manage
-            users, and keep the community thriving.
+            {subtext}
           </p>
         </div>
 
         <div className="mt-auto grid grid-cols-3 gap-4">
-          <StatCard value="124K" label="TOTAL USERS" />
-          <StatCard value="892K" label="TOTAL POSTS" />
-          <StatCard value="99.8%" label="UPTIME" />
+          {stats.map((stat) => (
+            <StatCard key={stat.label} value={stat.value} label={stat.label} />
+          ))}
         </div>
       </div>
     </div>
