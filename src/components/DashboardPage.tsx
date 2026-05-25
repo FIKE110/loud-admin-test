@@ -1,5 +1,3 @@
-import Sidebar from "./Sidebar"
-import DashboardHeader from "./DashboardHeader"
 import StatCard from "./StatCard"
 import UserGrowthChart from "./UserGrowthChart"
 import ContentBreakdownChart from "./ContentBreakdownChart"
@@ -108,36 +106,30 @@ const stats = [
 
 export default function DashboardPage() {
   return (
-    <div className="bg-[#F9FAFC]">
-      <Sidebar />
-      <div className="flex h-screen flex-col pl-[256px]">
-        <DashboardHeader />
-        <main className="flex-1 overflow-y-auto px-8 py-6">
-          <div className="mb-6">
-            <h1 className="text-2xl font-bold text-[#08060D]">Dashboard</h1>
-            <p className="mt-1 text-sm text-[#6B6375]">
-              Welcome back, Ikechukwu. Here's what's happening today.
-            </p>
-          </div>
-
-          <div className="mb-6 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5">
-            {stats.map((stat) => (
-              <StatCard key={stat.title} {...stat} />
-            ))}
-          </div>
-
-          <div className="mb-6 grid grid-cols-1 gap-5 xl:grid-cols-2">
-            <UserGrowthChart />
-            <ContentBreakdownChart />
-          </div>
-
-          <div className="grid grid-cols-1 gap-5 lg:grid-cols-3">
-            <TopCountries />
-            <EngagementChart />
-            <LiveActivity />
-          </div>
-        </main>
+    <>
+      <div className="mb-6">
+        <h1 className="text-2xl font-bold text-[#08060D]">Dashboard</h1>
+        <p className="mt-1 text-sm text-[#6B6375]">
+          Welcome back, Ikechukwu. Here's what's happening today.
+        </p>
       </div>
-    </div>
+
+      <div className="mb-6 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5">
+        {stats.map((stat) => (
+          <StatCard key={stat.title} {...stat} />
+        ))}
+      </div>
+
+      <div className="mb-6 grid grid-cols-1 gap-5 xl:grid-cols-2">
+        <UserGrowthChart />
+        <ContentBreakdownChart />
+      </div>
+
+      <div className="grid grid-cols-1 gap-5 lg:grid-cols-3">
+        <TopCountries />
+        <EngagementChart />
+        <LiveActivity />
+      </div>
+    </>
   )
 }
