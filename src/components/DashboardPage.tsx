@@ -108,9 +108,9 @@ const stats = [
 
 export default function DashboardPage() {
   return (
-    <div className="flex min-h-screen bg-[#F9FAFC]">
+    <div className="bg-[#F9FAFC]">
       <Sidebar />
-      <div className="flex flex-1 flex-col">
+      <div className="flex h-screen flex-col pl-[256px]">
         <DashboardHeader />
         <main className="flex-1 overflow-y-auto px-8 py-6">
           <div className="mb-6">

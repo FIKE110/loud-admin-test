@@ -72,7 +72,7 @@ export default function Sidebar() {
   const { pathname } = useLocation()
 
   return (
-    <aside className="flex h-screen w-[256px] shrink-0 flex-col bg-[#06102F]">
+    <aside className="fixed inset-y-0 left-0 z-30 flex h-screen w-[256px] flex-col bg-[#06102F]">
       <div className="flex items-center gap-3 px-6 pt-6 pb-8">
         <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#2561EE]">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
