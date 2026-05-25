@@ -1,6 +1,8 @@
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 
 export default function LoginForm() {
+  const navigate = useNavigate()
+
   return (
     <div className="flex min-h-screen w-1/2 flex-col justify-center bg-[#FEFEFE] px-16">
       <div className="mx-auto w-full max-w-sm">
@@ -15,7 +17,7 @@ export default function LoginForm() {
           Sign in to access the Loud! admin dashboard.
         </p>
 
-        <form className="mt-10 space-y-5" onSubmit={(e) => e.preventDefault()}>
+        <form className="mt-10 space-y-5" onSubmit={(e) => { e.preventDefault(); navigate("/dashboard") }}>
           <div>
             <label
               htmlFor="email"
