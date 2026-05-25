@@ -7,6 +7,7 @@ import UsersPage from "./components/UsersPage"
 import PostsPage from "./components/PostsPage"
 import BirthdayPostsPage from "./components/BirthdayPostsPage"
 import CollageAndGroupsPage from "./components/CollageAndGroupsPage"
+import StoriesPage from "./components/StoriesPage"
 import NotFound from "./components/NotFound"
 
 export const router = createBrowserRouter([
@@ -27,6 +28,7 @@ export const router = createBrowserRouter([
       { path: "posts", element: <PostsPage /> },
       { path: "birthday-posts", element: <BirthdayPostsPage /> },
       { path: "collage-and-groups", element: <CollageAndGroupsPage /> },
+      { path: "stories", element: <StoriesPage /> },
     ],
   },
   {
