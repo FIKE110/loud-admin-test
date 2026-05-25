@@ -36,6 +36,9 @@ npm run lint      # eslint
 | `/dashboard/finance` | `FinancePage` | Finance overview with KPI cards, charts, transactions |
 | `/dashboard/coin-transactions` | `CoinTransactionsPage` | Coin transaction ledger with channel tracking |
 | `/dashboard/gift-transactions` | `GiftTransactionsPage` | Gift P2P transaction ledger with sender/recipient |
+| `/dashboard/adverts` | `AdvertsPage` | Ad campaign management with metric cards + card grid |
+| `/dashboard/analytics` | `AnalyticsPage` | Analytics engine with KPI cards, chart placeholders, notification sidebar |
+| `/dashboard/notification` | `NotificationPage` | Full notification center with filters and dismiss |
 | `*` | `NotFound` | 404 page |
 
 ## Page Implementation Patterns

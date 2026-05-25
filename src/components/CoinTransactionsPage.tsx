@@ -39,12 +39,12 @@ const typeColors: Record<TxnType, string> = {
   Refund: "bg-blue-100 text-blue-700",
 }
 
-const channelDots: Record<Channel, string> = {
-  "Bank Transfer": "bg-blue-500",
-  Card: "bg-amber-500",
-  USSD: "bg-purple-500",
-  Paystack: "bg-green-500",
-  Flutterwave: "bg-pink-500",
+const channelStyles: Record<Channel, { border: string; bg: string; dot: string; text: string }> = {
+  "Bank Transfer": { border: "border-blue-300", bg: "bg-blue-50", dot: "bg-blue-500", text: "text-blue-700" },
+  Card: { border: "border-amber-300", bg: "bg-amber-50", dot: "bg-amber-500", text: "text-amber-700" },
+  USSD: { border: "border-purple-300", bg: "bg-purple-50", dot: "bg-purple-500", text: "text-purple-700" },
+  Paystack: { border: "border-green-300", bg: "bg-green-50", dot: "bg-green-500", text: "text-green-700" },
+  Flutterwave: { border: "border-pink-300", bg: "bg-pink-50", dot: "bg-pink-500", text: "text-pink-700" },
 }
 
 export default function CoinTransactionsPage() {
@@ -198,10 +198,10 @@ export default function CoinTransactionsPage() {
                   <td className="px-4 py-3.5 text-[#08060D]">{t.coins}</td>
                   <td className="px-4 py-3.5 text-[#08060D]">{t.fee}</td>
                   <td className="px-4 py-3.5">
-                    <div className="flex items-center gap-1.5">
-                      <span className={`h-2 w-2 rounded-full ${channelDots[t.channel]}`} />
-                      <span className="text-[#08060D]">{t.channel}</span>
-                    </div>
+                    <span className={`inline-flex items-center gap-1.5 rounded-full border px-3 py-1 text-[11px] font-medium ${channelStyles[t.channel].border} ${channelStyles[t.channel].bg} ${channelStyles[t.channel].text}`}>
+                      <span className={`h-1.5 w-1.5 rounded-full ${channelStyles[t.channel].dot}`} />
+                      {t.channel}
+                    </span>
                   </td>
                   <td className="px-4 py-3.5 font-mono text-[10px] text-[#6B6375]">{t.reference}</td>
                   <td className="px-4 py-3.5 whitespace-nowrap text-[#08060D]">{t.dateTime}</td>

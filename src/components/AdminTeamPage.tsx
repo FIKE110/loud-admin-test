@@ -1,4 +1,5 @@
 import { useState } from "react"
+import { X } from "lucide-react"
 
 type AdminRole = "Super Admin" | "Moderator" | "User Manager"
 
@@ -42,7 +43,16 @@ export default function AdminTeamPage() {
   const [search, setSearch] = useState("")
   const [revokedIds, setRevokedIds] = useState<Set<number>>(new Set())
   const [inviteOpen, setInviteOpen] = useState(false)
+  const [inviteEmail, setInviteEmail] = useState("")
+  const [inviteRole, setInviteRole] = useState("Super Admin")
   const [page, setPage] = useState(1)
+
+  function handleInviteSubmit(e: React.FormEvent) {
+    e.preventDefault()
+    setInviteOpen(false)
+    setInviteEmail("")
+    setInviteRole("Super Admin")
+  }
 
   const perPage = 10
 
@@ -242,60 +252,74 @@ export default function AdminTeamPage() {
         )}
       </div>
 
-      {/* ── Invite Admin Modal ── */}
+      {/* MODAL SYSTEM OVERLAY: AD ADMIN INVITATION WINDOW */}
       {inviteOpen && (
-        <div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black/40"
-          onClick={() => setInviteOpen(false)}
-        >
-          <div
-            className="mx-4 w-full max-w-md rounded-2xl bg-white shadow-2xl"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <div className="flex items-center justify-between border-b border-[#E5E4E7] px-6 py-4">
-              <h2 className="text-lg font-bold text-[#08060D]">Invite Admin</h2>
-              <button
+        <div className="fixed inset-0 z-50 bg-slate-900/40 backdrop-blur-sm flex items-center justify-center p-4">
+          <div className="bg-white w-full max-w-md rounded-2xl border border-slate-100 shadow-2xl overflow-hidden animate-scaleUp">
+            <div className="p-5 border-b border-slate-100 flex items-center justify-between bg-slate-50/50">
+              <div>
+                <h2 className="text-sm font-black text-slate-900 uppercase tracking-wider">Invite Admin</h2>
+                <p className="text-[11px] font-semibold text-slate-400 mt-0.5">Provision role-restricted structural dashboard credentials.</p>
+              </div>
+              <button 
                 onClick={() => setInviteOpen(false)}
-                className="flex h-8 w-8 items-center justify-center rounded-lg text-[#6B6375] transition-colors hover:bg-[#F8F9FC]"
+                className="p-1.5 hover:bg-slate-200/60 rounded-xl text-slate-400 hover:text-slate-600 transition-all"
               >
-                <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                </svg>
+                <X className="w-4 h-4" />
               </button>
             </div>
-            <div className="space-y-4 px-6 py-5">
+
+            <form onSubmit={handleInviteSubmit} className="p-5 flex flex-col gap-4">
               <div>
-                <label className="mb-1.5 block text-xs font-semibold uppercase tracking-[0.08em] text-[#6B6375]">
-                  Email Address
-                </label>
-                <input
-                  type="email"
-                  placeholder="admin@loud.app"
-                  className="w-full rounded-xl border border-[#E5E4E7] bg-white px-4 py-2.5 text-sm text-[#08060D] placeholder-[#9CA3AF] outline-none transition-colors focus:border-[#2561EE] focus:ring-1 focus:ring-[#2561EE]"
+                <label className="block text-[10px] font-black uppercase text-slate-400 tracking-wider mb-1.5">Email Address</label>
+                <input 
+                  type="email" 
+                  required
+                  value={inviteEmail}
+                  onChange={(e) => setInviteEmail(e.target.value)}
+                  placeholder="newadmin@loud.social"
+                  className="w-full px-3.5 py-2 text-xs border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 bg-slate-50/50 focus:bg-white transition-all font-medium text-slate-800"
                 />
               </div>
+
               <div>
-                <label className="mb-1.5 block text-xs font-semibold uppercase tracking-[0.08em] text-[#6B6375]">
-                  Role
-                </label>
-                <select className="w-full cursor-pointer rounded-xl border border-[#E5E4E7] bg-white px-4 py-2.5 text-sm text-[#08060D] outline-none focus:border-[#2561EE]">
-                  <option>Moderator</option>
-                  <option>User Manager</option>
-                  <option>Super Admin</option>
+                <label className="block text-[10px] font-black uppercase text-slate-400 tracking-wider mb-1.5">System Role Mapping</label>
+                <select 
+                  value={inviteRole}
+                  onChange={(e) => setInviteRole(e.target.value)}
+                  className="w-full px-3 py-2 text-xs border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 bg-slate-50/50 focus:bg-white transition-all font-bold text-slate-700"
+                >
+                  <option value="Super Admin">Super Admin (Full Access Override)</option>
+                  <option value="Moderator">Moderator (Content & Queue Auditing)</option>
+                  <option value="User Manager">User Manager (Identity Records Scope)</option>
                 </select>
               </div>
-            </div>
-            <div className="flex items-center justify-end gap-3 border-t border-[#E5E4E7] px-6 py-4">
-              <button
-                onClick={() => setInviteOpen(false)}
-                className="rounded-xl border border-[#E5E4E7] bg-white px-5 py-2.5 text-sm font-medium text-[#08060D] transition-colors hover:bg-[#F8F9FC]"
-              >
-                Cancel
-              </button>
-              <button className="rounded-xl bg-[#2561EE] px-5 py-2.5 text-sm font-medium text-white transition-colors hover:bg-[#1A4FCC]">
-                Send Invite
-              </button>
-            </div>
+
+              <div>
+                <label className="block text-[10px] font-black uppercase text-slate-400 tracking-wider mb-1.5">Message (Optional)</label>
+                <textarea 
+                  placeholder="Add a personal note..."
+                  rows={3}
+                  className="w-full px-3.5 py-2 text-xs border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 bg-slate-50/50 focus:bg-white transition-all font-medium text-slate-800 resize-none"
+                />
+              </div>
+
+              <div className="flex items-center justify-end gap-2 border-t border-slate-100 pt-4 mt-2">
+                <button 
+                  type="button"
+                  onClick={() => setInviteOpen(false)}
+                  className="px-4 py-2 text-xs font-bold border border-slate-200 rounded-xl hover:bg-slate-50 transition-colors"
+                >
+                  Cancel
+                </button>
+                <button 
+                  type="submit"
+                  className="px-4 py-2 text-xs font-bold bg-blue-600 text-white rounded-xl hover:bg-blue-700 transition-colors shadow-sm"
+                >
+                  Send Invitation
+                </button>
+              </div>
+            </form>
           </div>
         </div>
       )}

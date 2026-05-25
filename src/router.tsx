@@ -15,6 +15,9 @@ import AdminTeamPage from "./components/AdminTeamPage"
 import FinancePage from "./components/FinancePage"
 import CoinTransactionsPage from "./components/CoinTransactionsPage"
 import GiftTransactionsPage from "./components/GiftTransactionsPage"
+import AdvertsPage from "./components/AdvertsPage"
+import AnalyticsPage from "./components/AnalyticsPage"
+import NotificationPage from "./components/NotificationPage"
 import NotFound from "./components/NotFound"
 
 export const router = createBrowserRouter([
@@ -43,6 +46,9 @@ export const router = createBrowserRouter([
       { path: "finance", element: <FinancePage /> },
       { path: "coin-transactions", element: <CoinTransactionsPage /> },
       { path: "gift-transactions", element: <GiftTransactionsPage /> },
+      { path: "adverts", element: <AdvertsPage /> },
+      { path: "analytics", element: <AnalyticsPage /> },
+      { path: "notification", element: <NotificationPage /> },
     ],
   },
   {
