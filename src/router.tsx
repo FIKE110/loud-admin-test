@@ -13,6 +13,8 @@ import ReportsAndFlagsPage from "./components/ReportsAndFlagsPage"
 import ModQueuePage from "./components/ModQueuePage"
 import AdminTeamPage from "./components/AdminTeamPage"
 import FinancePage from "./components/FinancePage"
+import CoinTransactionsPage from "./components/CoinTransactionsPage"
+import GiftTransactionsPage from "./components/GiftTransactionsPage"
 import NotFound from "./components/NotFound"
 
 export const router = createBrowserRouter([
@@ -39,6 +41,8 @@ export const router = createBrowserRouter([
       { path: "mod-queue", element: <ModQueuePage /> },
       { path: "admin-team", element: <AdminTeamPage /> },
       { path: "finance", element: <FinancePage /> },
+      { path: "coin-transactions", element: <CoinTransactionsPage /> },
+      { path: "gift-transactions", element: <GiftTransactionsPage /> },
     ],
   },
   {

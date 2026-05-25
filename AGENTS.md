@@ -34,6 +34,8 @@ npm run lint      # eslint
 | `/dashboard/mod-queue` | `ModQueuePage` | AI-powered moderation queue with confidence bars |
 | `/dashboard/admin-team` | `AdminTeamPage` | Admin account management with roles & 2FA |
 | `/dashboard/finance` | `FinancePage` | Finance overview with KPI cards, charts, transactions |
+| `/dashboard/coin-transactions` | `CoinTransactionsPage` | Coin transaction ledger with channel tracking |
+| `/dashboard/gift-transactions` | `GiftTransactionsPage` | Gift P2P transaction ledger with sender/recipient |
 | `*` | `NotFound` | 404 page |
 
 ## Page Implementation Patterns
