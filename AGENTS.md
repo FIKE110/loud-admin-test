@@ -29,6 +29,7 @@ npm run lint      # eslint
 | `/dashboard/birthday-posts` | `BirthdayPostsPage` | Birthday post sender→recipient table |
 | `/dashboard/collage-and-groups` | `CollageAndGroupsPage` | Group/community spaces table |
 | `/dashboard/stories` | `StoriesPage` | Ephemeral stories table with duration counters |
+| `/dashboard/live-streams` | `LiveStreamsPage` | Live streams triage with summary cards + streaming matrix |
 | `*` | `NotFound` | 404 page |
 
 ## Page Implementation Patterns
