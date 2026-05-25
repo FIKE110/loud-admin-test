@@ -11,6 +11,7 @@ import StoriesPage from "./components/StoriesPage"
 import LiveStreamsPage from "./components/LiveStreamsPage"
 import ReportsAndFlagsPage from "./components/ReportsAndFlagsPage"
 import ModQueuePage from "./components/ModQueuePage"
+import AdminTeamPage from "./components/AdminTeamPage"
 import NotFound from "./components/NotFound"
 
 export const router = createBrowserRouter([
@@ -35,6 +36,7 @@ export const router = createBrowserRouter([
       { path: "live-streams", element: <LiveStreamsPage /> },
       { path: "reports-and-flags", element: <ReportsAndFlagsPage /> },
       { path: "mod-queue", element: <ModQueuePage /> },
+      { path: "admin-team", element: <AdminTeamPage /> },
     ],
   },
   {

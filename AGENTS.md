@@ -32,6 +32,7 @@ npm run lint      # eslint
 | `/dashboard/live-streams` | `LiveStreamsPage` | Live streams triage with summary cards + streaming matrix |
 | `/dashboard/reports-and-flags` | `ReportsAndFlagsPage` | Report triage with type/priority/status filters |
 | `/dashboard/mod-queue` | `ModQueuePage` | AI-powered moderation queue with confidence bars |
+| `/dashboard/admin-team` | `AdminTeamPage` | Admin account management with roles & 2FA |
 | `*` | `NotFound` | 404 page |
 
 ## Page Implementation Patterns
