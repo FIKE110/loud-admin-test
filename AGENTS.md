@@ -30,6 +30,7 @@ npm run lint      # eslint
 | `/dashboard/collage-and-groups` | `CollageAndGroupsPage` | Group/community spaces table |
 | `/dashboard/stories` | `StoriesPage` | Ephemeral stories table with duration counters |
 | `/dashboard/live-streams` | `LiveStreamsPage` | Live streams triage with summary cards + streaming matrix |
+| `/dashboard/reports-and-flags` | `ReportsAndFlagsPage` | Report triage with type/priority/status filters |
 | `*` | `NotFound` | 404 page |
 
 ## Page Implementation Patterns

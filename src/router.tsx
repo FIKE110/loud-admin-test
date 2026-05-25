@@ -9,6 +9,7 @@ import BirthdayPostsPage from "./components/BirthdayPostsPage"
 import CollageAndGroupsPage from "./components/CollageAndGroupsPage"
 import StoriesPage from "./components/StoriesPage"
 import LiveStreamsPage from "./components/LiveStreamsPage"
+import ReportsAndFlagsPage from "./components/ReportsAndFlagsPage"
 import NotFound from "./components/NotFound"
 
 export const router = createBrowserRouter([
@@ -31,6 +32,7 @@ export const router = createBrowserRouter([
       { path: "collage-and-groups", element: <CollageAndGroupsPage /> },
       { path: "stories", element: <StoriesPage /> },
       { path: "live-streams", element: <LiveStreamsPage /> },
+      { path: "reports-and-flags", element: <ReportsAndFlagsPage /> },
     ],
   },
   {
