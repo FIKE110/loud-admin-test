@@ -31,6 +31,7 @@ npm run lint      # eslint
 | `/dashboard/stories` | `StoriesPage` | Ephemeral stories table with duration counters |
 | `/dashboard/live-streams` | `LiveStreamsPage` | Live streams triage with summary cards + streaming matrix |
 | `/dashboard/reports-and-flags` | `ReportsAndFlagsPage` | Report triage with type/priority/status filters |
+| `/dashboard/mod-queue` | `ModQueuePage` | AI-powered moderation queue with confidence bars |
 | `*` | `NotFound` | 404 page |
 
 ## Page Implementation Patterns
