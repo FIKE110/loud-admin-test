@@ -33,6 +33,7 @@ npm run lint      # eslint
 | `/dashboard/reports-and-flags` | `ReportsAndFlagsPage` | Report triage with type/priority/status filters |
 | `/dashboard/mod-queue` | `ModQueuePage` | AI-powered moderation queue with confidence bars |
 | `/dashboard/admin-team` | `AdminTeamPage` | Admin account management with roles & 2FA |
+| `/dashboard/finance` | `FinancePage` | Finance overview with KPI cards, charts, transactions |
 | `*` | `NotFound` | 404 page |
 
 ## Page Implementation Patterns

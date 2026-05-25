@@ -12,6 +12,7 @@ import LiveStreamsPage from "./components/LiveStreamsPage"
 import ReportsAndFlagsPage from "./components/ReportsAndFlagsPage"
 import ModQueuePage from "./components/ModQueuePage"
 import AdminTeamPage from "./components/AdminTeamPage"
+import FinancePage from "./components/FinancePage"
 import NotFound from "./components/NotFound"
 
 export const router = createBrowserRouter([
@@ -37,6 +38,7 @@ export const router = createBrowserRouter([
       { path: "reports-and-flags", element: <ReportsAndFlagsPage /> },
       { path: "mod-queue", element: <ModQueuePage /> },
       { path: "admin-team", element: <AdminTeamPage /> },
+      { path: "finance", element: <FinancePage /> },
     ],
   },
   {
