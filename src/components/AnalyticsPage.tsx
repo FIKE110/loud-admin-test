@@ -88,7 +88,7 @@ export default function AnalyticsPage() {
         <div>
           <div className="flex items-center gap-2.5 mb-1">
             <BarChart3 className="h-4 w-4 text-[#08060D]" />
-            <h1 className="text-lg font-bold text-[#08060D]">Analytics Engine</h1>
+            <h1 className="text-base font-bold text-[#08060D]">Analytics Engine</h1>
           </div>
           <p className="text-[11px] font-semibold text-[#6B6375]">
             Platform performance metrics, distribution maps, and system telemetry.

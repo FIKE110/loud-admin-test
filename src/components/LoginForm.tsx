@@ -4,24 +4,28 @@ export default function LoginForm() {
   const navigate = useNavigate()
 
   return (
-    <div className="flex min-h-screen w-1/2 flex-col justify-center bg-[#FEFEFE] px-16">
+    <div className="flex min-h-screen w-full flex-col justify-center bg-[#FEFEFE] px-6 sm:px-10 lg:w-1/2 lg:px-16">
       <div className="mx-auto w-full max-w-sm">
-        <span className="text-xs font-semibold tracking-[0.2em] text-[#2561EE]">
+        <div className="mb-6 flex items-center gap-2 lg:hidden">
+          <img src="/logo.png" alt="Loud!" className="h-8 w-8 rounded-full border border-black/20" />
+          <span className="text-lg font-bold text-[#08060D]">Loud!</span>
+        </div>
+        <span className="text-[10px] sm:text-xs font-semibold tracking-[0.2em] text-[#2561EE]">
           ADMIN PORTAL
         </span>
 
-        <h2 className="mt-4 text-3xl font-bold text-[#08060D]">
+        <h2 className="mt-4 text-2xl sm:text-3xl font-bold text-[#08060D]">
           Welcome back
         </h2>
-        <p className="mt-2 text-sm text-[#6B6375]">
+        <p className="mt-2 text-[13px] sm:text-sm text-[#6B6375]">
           Sign in to access the Loud! admin dashboard.
         </p>
 
-        <form className="mt-10 space-y-5" onSubmit={(e) => { e.preventDefault(); navigate("/dashboard") }}>
+        <form className="mt-8 sm:mt-10 space-y-4 sm:space-y-5" onSubmit={(e) => { e.preventDefault(); navigate("/dashboard") }}>
           <div>
             <label
               htmlFor="email"
-              className="mb-1.5 block text-sm font-medium text-[#08060D]"
+              className="mb-1.5 block text-xs sm:text-sm font-medium text-[#08060D]"
             >
               Email address
             </label>
@@ -45,7 +49,7 @@ export default function LoginForm() {
                 id="email"
                 type="email"
                 defaultValue="admin@loud.social"
-                className="w-full rounded-xl border border-[#E5E4E7] bg-white py-3.5 pl-12 pr-4 text-sm text-[#08060D] placeholder-[#9CA3AF] outline-none transition-colors focus:border-[#2561EE] focus:ring-1 focus:ring-[#2561EE]"
+                className="w-full rounded-xl border border-[#E5E4E7] bg-white py-3 sm:py-3.5 pl-12 pr-4 text-xs sm:text-sm text-[#08060D] placeholder-[#9CA3AF] outline-none transition-colors focus:border-[#2561EE] focus:ring-1 focus:ring-[#2561EE]"
               />
             </div>
           </div>
@@ -54,7 +58,7 @@ export default function LoginForm() {
             <div className="flex items-center justify-between">
               <label
                 htmlFor="password"
-                className="mb-1.5 block text-sm font-medium text-[#08060D]"
+                className="mb-1.5 block text-xs sm:text-sm font-medium text-[#08060D]"
               >
                 Password
               </label>
@@ -79,7 +83,7 @@ export default function LoginForm() {
                 id="password"
                 type="password"
                 defaultValue="••••••••"
-                className="w-full rounded-xl border border-[#E5E4E7] bg-white py-3.5 pl-12 pr-4 text-sm text-[#08060D] outline-none transition-colors focus:border-[#2561EE] focus:ring-1 focus:ring-[#2561EE]"
+                className="w-full rounded-xl border border-[#E5E4E7] bg-white py-3 sm:py-3.5 pl-12 pr-4 text-xs sm:text-sm text-[#08060D] outline-none transition-colors focus:border-[#2561EE] focus:ring-1 focus:ring-[#2561EE]"
               />
             </div>
           </div>
@@ -87,7 +91,7 @@ export default function LoginForm() {
           <div className="text-right">
             <Link
               to="/reset-password"
-              className="text-sm font-medium text-[#2561EE] hover:underline"
+              className="text-xs sm:text-sm font-medium text-[#2561EE] hover:underline"
             >
               Forgot your password?
             </Link>
@@ -95,13 +99,13 @@ export default function LoginForm() {
 
           <button
             type="submit"
-            className="w-full rounded-xl bg-gradient-to-r from-[#2561EE] to-[#1A4FCC] py-3.5 text-sm font-semibold text-white shadow-lg shadow-[#2561EE]/25 transition-all hover:shadow-xl hover:shadow-[#2561EE]/30 active:scale-[0.98]"
+            className="w-full rounded-xl bg-gradient-to-r from-[#2561EE] to-[#1A4FCC] py-3 sm:py-3.5 text-xs sm:text-sm font-semibold text-white shadow-lg shadow-[#2561EE]/25 transition-all hover:shadow-xl hover:shadow-[#2561EE]/30 active:scale-[0.98]"
           >
             Sign in to Dashboard
           </button>
         </form>
 
-        <div className="mt-8 rounded-xl border border-[#E5E4E7] bg-[#F8F9FC] p-4">
+        <div className="mt-6 sm:mt-8 rounded-xl border border-[#E5E4E7] bg-[#F8F9FC] p-3 sm:p-4">
           <div className="flex items-start gap-3">
             <svg
               className="mt-0.5 h-4 w-4 shrink-0 text-[#6B6375]"
@@ -116,7 +120,7 @@ export default function LoginForm() {
                 d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"
               />
             </svg>
-            <p className="text-xs leading-relaxed text-[#6B6375]">
+            <p className="text-[11px] sm:text-xs leading-relaxed text-[#6B6375]">
               Admin access is by invitation only. Contact a super admin to
               request access. Unauthorized login attempts are logged.
             </p>

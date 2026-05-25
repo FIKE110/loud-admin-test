@@ -108,8 +108,8 @@ export default function DashboardPage() {
   return (
     <>
       <div className="mb-6">
-        <h1 className="text-2xl font-bold text-[#08060D]">Dashboard</h1>
-        <p className="mt-1 text-sm text-[#6B6375]">
+        <h1 className="text-lg sm:text-xl font-bold text-[#08060D]">Dashboard</h1>
+        <p className="mt-1 text-[13px] text-[#6B6375]">
           Welcome back, Ikechukwu. Here's what's happening today.
         </p>
       </div>

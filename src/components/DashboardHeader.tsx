@@ -1,28 +1,42 @@
-export default function DashboardHeader() {
+import { Menu } from "lucide-react"
+
+type HeaderProps = {
+  onToggleSidebar: () => void
+}
+
+export default function DashboardHeader({ onToggleSidebar }: HeaderProps) {
   return (
-    <header className="flex items-center justify-between border-b border-[#E5E4E7] bg-white px-8 py-4">
-      <div className="relative w-80">
-        <svg
-          className="pointer-events-none absolute left-3.5 top-1/2 h-4 w-4 -translate-y-1/2 text-[#9CA3AF]"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
+    <header className="flex items-center justify-between border-b border-[#E5E4E7] bg-white px-4 sm:px-8 py-4">
+      <div className="flex items-center gap-3">
+        <button
+          onClick={onToggleSidebar}
+          className="rounded-lg p-2 text-[#6B6375] hover:bg-[#F8F9FC] lg:hidden"
         >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+          <Menu className="h-5 w-5" />
+        </button>
+        <div className="relative w-48 sm:w-64 lg:w-80">
+          <svg
+            className="pointer-events-none absolute left-3.5 top-1/2 h-4 w-4 -translate-y-1/2 text-[#9CA3AF]"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+            />
+          </svg>
+          <input
+            type="text"
+            placeholder="Search..."
+            className="w-full rounded-xl border border-[#E5E4E7] bg-[#F8F9FC] py-2.5 pl-10 pr-4 text-sm text-[#08060D] placeholder-[#9CA3AF] outline-none transition-colors focus:border-[#2561EE] focus:bg-white focus:ring-1 focus:ring-[#2561EE]"
           />
-        </svg>
-        <input
-          type="text"
-          placeholder="Search..."
-          className="w-full rounded-xl border border-[#E5E4E7] bg-[#F8F9FC] py-2.5 pl-10 pr-4 text-sm text-[#08060D] placeholder-[#9CA3AF] outline-none transition-colors focus:border-[#2561EE] focus:bg-white focus:ring-1 focus:ring-[#2561EE]"
-        />
+        </div>
       </div>
 
-      <div className="flex items-center gap-5">
+      <div className="flex items-center gap-3 sm:gap-5">
         <button className="relative text-[#6B6375] transition-colors hover:text-[#08060D]">
           <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path
@@ -37,7 +51,7 @@ export default function DashboardHeader() {
           </span>
         </button>
 
-        <button className="text-[#6B6375] transition-colors hover:text-[#08060D]">
+        <button className="hidden sm:flex text-[#6B6375] transition-colors hover:text-[#08060D]">
           <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path
               strokeLinecap="round"
@@ -48,7 +62,7 @@ export default function DashboardHeader() {
           </svg>
         </button>
 
-        <button className="flex h-7 w-7 items-center justify-center rounded-full border border-[#E5E4E7] text-[#6B6375] transition-colors hover:border-[#2561EE] hover:text-[#2561EE]">
+        <button className="hidden sm:flex h-7 w-7 items-center justify-center rounded-full border border-[#E5E4E7] text-[#6B6375] transition-colors hover:border-[#2561EE] hover:text-[#2561EE]">
           <svg className="h-3.5 w-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path
               strokeLinecap="round"
@@ -59,8 +73,8 @@ export default function DashboardHeader() {
           </svg>
         </button>
 
-        <div className="flex items-center gap-3 border-l border-[#E5E4E7] pl-5">
-          <div className="flex h-9 w-9 items-center justify-center rounded-full bg-gradient-to-br from-[#2561EE] to-[#1A4FCC] text-xs font-bold text-white">
+        <div className="flex items-center gap-3 border-l border-[#E5E4E7] pl-3 sm:pl-5">
+          <div className="flex h-8 w-8 sm:h-9 sm:w-9 items-center justify-center rounded-full bg-gradient-to-br from-[#2561EE] to-[#1A4FCC] text-xs font-bold text-white">
             IM
           </div>
           <div className="hidden sm:block">

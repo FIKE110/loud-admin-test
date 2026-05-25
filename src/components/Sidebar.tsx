@@ -36,77 +36,76 @@ const sections: Section[] = [
   {
     label: "Overview",
     items: [
-      { label: "Dashboard", path: "/dashboard", icon: <LayoutDashboard size={18} /> },
+      { label: "Dashboard", path: "/dashboard", icon: <LayoutDashboard size={16} /> },
     ],
   },
   {
     label: "Content",
     items: [
-      { label: "Users", path: "/dashboard/users", icon: <Users size={18} />, data: "124k", dataColor: "blue" },
-      { label: "Posts", path: "/dashboard/posts", icon: <FileText size={18} />, data: "8", dataColor: "red" },
-      { label: "Birthday Posts", path: "/dashboard/birthday-posts", icon: <Cake size={18} /> },
-      { label: "Collage & Groups", path: "/dashboard/collage-and-groups", icon: <Grid3X3 size={18} /> },
-      { label: "Stories", path: "/dashboard/stories", icon: <BookOpen size={18} /> },
-      { label: "Live Streams", path: "/dashboard/live-streams", icon: <Video size={18} /> },
+      { label: "Users", path: "/dashboard/users", icon: <Users size={16} />, data: "124k", dataColor: "blue" },
+      { label: "Posts", path: "/dashboard/posts", icon: <FileText size={16} />, data: "8", dataColor: "red" },
+      { label: "Birthday Posts", path: "/dashboard/birthday-posts", icon: <Cake size={16} /> },
+      { label: "Collage & Groups", path: "/dashboard/collage-and-groups", icon: <Grid3X3 size={16} /> },
+      { label: "Stories", path: "/dashboard/stories", icon: <BookOpen size={16} /> },
+      { label: "Live Streams", path: "/dashboard/live-streams", icon: <Video size={16} /> },
     ],
   },
   {
     label: "Moderation",
     items: [
-      { label: "Reports & Flags", path: "/dashboard/reports-and-flags", icon: <Flag size={18} /> },
-      { label: "Mod Queue", path: "/dashboard/mod-queue", icon: <ShieldCheck size={18} /> },
+      { label: "Reports & Flags", path: "/dashboard/reports-and-flags", icon: <Flag size={16} /> },
+      { label: "Mod Queue", path: "/dashboard/mod-queue", icon: <ShieldCheck size={16} /> },
     ],
   },
   {
     label: "Administration",
     items: [
-      { label: "Admin Team", path: "/dashboard/admin-team", icon: <Shield size={18} /> },
-      { label: "Analytics", path: "/dashboard/analytics", icon: <BarChart3 size={18} /> },
-      { label: "Notification", path: "/dashboard/notification", icon: <Bell size={18} />, data: "5", dataColor: "red" },
+      { label: "Admin Team", path: "/dashboard/admin-team", icon: <Shield size={16} /> },
+      { label: "Analytics", path: "/dashboard/analytics", icon: <BarChart3 size={16} /> },
+      { label: "Notification", path: "/dashboard/notification", icon: <Bell size={16} />, data: "5", dataColor: "red" },
     ],
   },
   {
     label: "Finance",
     items: [
-      { label: "Finance Overview", path: "/dashboard/finance", icon: <Wallet size={18} />, data: "100k₦", dataColor: "red" },
-      { label: "Coin Transactions", path: "/dashboard/coin-transactions", icon: <Coins size={18} /> },
-      { label: "Gift Transactions", path: "/dashboard/gift-transactions", icon: <Gift size={18} /> },
+      { label: "Finance Overview", path: "/dashboard/finance", icon: <Wallet size={16} />, data: "100k₦", dataColor: "red" },
+      { label: "Coin Transactions", path: "/dashboard/coin-transactions", icon: <Coins size={16} /> },
+      { label: "Gift Transactions", path: "/dashboard/gift-transactions", icon: <Gift size={16} /> },
     ],
   },
   {
     label: "Advertising",
     items: [
-      { label: "Adverts", path: "/dashboard/adverts", icon: <Megaphone size={18} />, data: "8", dataColor: "red" },
+      { label: "Adverts", path: "/dashboard/adverts", icon: <Megaphone size={16} />, data: "8", dataColor: "red" },
     ],
   },
   {
     label: "Account",
     items: [
-      { label: "Settings", path: "/dashboard/settings", icon: <Settings size={18} /> },
+      { label: "Settings", path: "/dashboard/settings", icon: <Settings size={16} /> },
     ],
   },
 ]
 
-export default function Sidebar() {
+type SidebarProps = {
+  isOpen: boolean
+  onClose: () => void
+}
+
+export default function Sidebar({ isOpen, onClose }: SidebarProps) {
   const { pathname } = useLocation()
 
-  return (
-    <aside className="fixed inset-y-0 left-0 z-30 flex h-screen w-[256px] flex-col bg-[#06102F]">
-      <div className="flex items-center gap-3 px-5 pt-5 pb-4">
-        <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-[#2561EE]">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-            <path d="M6 4h12M6 12h8M6 20h12" stroke="white" strokeWidth="2.5" strokeLinecap="round" />
-            <circle cx="18" cy="8" r="2" fill="white" />
-            <circle cx="16" cy="16" r="2" fill="white" />
-          </svg>
+  const sidebar = (
+    <aside className="flex h-full w-[256px] flex-col bg-[#06102F]">
+        <div className="flex items-center gap-2.5 px-5 pt-4 pb-3">
+          <img src="/logo.png" alt="Loud!" className="h-7 w-7 rounded-full border border-black/20" />
+          <span className="text-sm font-bold text-white">Loud!</span>
         </div>
-        <span className="text-lg font-bold text-white">Loud!</span>
-      </div>
 
-      <nav className="flex-1 overflow-y-auto px-3 pb-2 scrollbar-thin scrollbar-track-transparent scrollbar-thumb-white/10">
+      <nav className="flex-1 overflow-y-auto px-2 pb-2 scrollbar-thin scrollbar-track-transparent scrollbar-thumb-white/10">
         {sections.map((section) => (
-          <div key={section.label} className="mb-3">
-            <p className="mb-1 px-2 text-[11px] font-bold uppercase tracking-[0.12em] text-white/60">
+          <div key={section.label} className="mb-2.5">
+            <p className="mb-1 px-2 text-[10px] font-bold uppercase tracking-[0.12em] text-white/60">
               {section.label}
             </p>
             <div className="space-y-0.5">
@@ -116,7 +115,8 @@ export default function Sidebar() {
                   <Link
                     key={item.path}
                     to={item.path}
-                    className={`flex items-center gap-3 rounded-lg px-3 py-2 text-sm font-semibold transition-colors ${
+                    onClick={onClose}
+                    className={`flex items-center gap-2.5 rounded-lg px-2.5 py-1.5 text-sm font-semibold transition-colors ${
                       isActive
                         ? "bg-white/10 text-white"
                         : "text-white/70 hover:bg-white/5 hover:text-white"
@@ -126,7 +126,7 @@ export default function Sidebar() {
                     <span className="flex-1 truncate">{item.label}</span>
                     {item.data && (
                       <span
-                        className={`flex h-5 min-w-[36px] items-center justify-center rounded-full px-2 text-[10px] font-bold text-white ${
+                        className={`flex h-[18px] min-w-[28px] items-center justify-center rounded-full px-1.5 text-[9px] font-bold text-white ${
                           item.dataColor === "blue" ? "bg-blue-500" : "bg-red-500"
                         }`}
                       >
@@ -141,20 +141,44 @@ export default function Sidebar() {
         ))}
       </nav>
 
-      <div className="border-t border-white/10 px-5 py-3.5">
-        <div className="flex items-center gap-3">
-          <div className="flex h-9 w-9 items-center justify-center rounded-full bg-gradient-to-br from-[#2561EE] to-[#1A4FCC] text-xs font-bold text-white">
+      <div className="border-t border-white/10 px-4 py-3">
+        <div className="flex items-center gap-2.5">
+          <div className="flex h-7 w-7 items-center justify-center rounded-full bg-gradient-to-br from-[#2561EE] to-[#1A4FCC] text-[10px] font-bold text-white">
             IM
           </div>
           <div className="flex-1 min-w-0">
-            <p className="truncate text-sm font-medium text-white">Ikechukwu</p>
-            <p className="truncate text-xs text-white/40">Administrator</p>
+            <p className="truncate text-xs font-medium text-white">Ikechukwu</p>
+            <p className="truncate text-[10px] text-white/40">Administrator</p>
           </div>
-          <svg className="h-4 w-4 shrink-0 text-white/30" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <svg className="h-3.5 w-3.5 shrink-0 text-white/30" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 5v14m7-7H5" />
           </svg>
         </div>
       </div>
     </aside>
+  )
+
+  return (
+    <>
+      {/* Mobile overlay */}
+      {isOpen && (
+        <div
+          className="fixed inset-0 z-40 bg-black/50 lg:hidden"
+          onClick={onClose}
+        />
+      )}
+      {/* Mobile sidebar (slide-in) */}
+      <div
+        className={`fixed inset-y-0 left-0 z-50 transition-transform duration-300 lg:hidden ${
+          isOpen ? "translate-x-0" : "-translate-x-full"
+        }`}
+      >
+        {sidebar}
+      </div>
+      {/* Desktop sidebar (always visible) */}
+      <div className="fixed inset-y-0 left-0 z-30 hidden lg:flex h-screen">
+        {sidebar}
+      </div>
+    </>
   )
 }

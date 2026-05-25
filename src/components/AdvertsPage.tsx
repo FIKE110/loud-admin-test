@@ -31,8 +31,8 @@ export default function AdvertsPage() {
     <>
       <div className="mb-6 flex items-center justify-between">
         <div>
-          <h1 className="text-2xl font-bold text-[#08060D]">Adverts</h1>
-          <p className="mt-1 text-sm text-[#6B6375]">Monitor and manage advertising campaigns across the platform.</p>
+          <h1 className="text-lg sm:text-xl font-bold text-[#08060D]">Adverts</h1>
+          <p className="mt-1 text-[13px] text-[#6B6375]">Monitor and manage advertising campaigns across the platform.</p>
         </div>
       </div>
 
@@ -72,7 +72,7 @@ export default function AdvertsPage() {
           <div key={c.title} className="rounded-2xl border border-[#E5E4E7] bg-white p-5 shadow-sm transition-shadow hover:shadow-md">
             <div className="mb-3 flex items-start justify-between">
               <div>
-                <h3 className="text-sm font-bold text-[#08060D]">{c.title}</h3>
+                <h3 className="text-xs font-bold text-[#08060D]">{c.title}</h3>
                 <p className="text-[11px] text-[#6B6375]">{c.client} / {c.creative}</p>
               </div>
               <span className={`inline-block whitespace-nowrap rounded-full px-2.5 py-0.5 text-[11px] font-semibold ${statusColors[c.status]}`}>{c.status}</span>
@@ -81,15 +81,15 @@ export default function AdvertsPage() {
             <div className="grid grid-cols-2 gap-3 border-t border-[#E5E4E7] pt-3">
               <div>
                 <p className="text-[10px] font-semibold uppercase tracking-[0.08em] text-[#6B6375]">Impressions</p>
-                <p className="text-sm font-bold text-[#08060D]">{c.impressions}</p>
+                <p className="text-xs font-bold text-[#08060D]">{c.impressions}</p>
               </div>
               <div>
                 <p className="text-[10px] font-semibold uppercase tracking-[0.08em] text-[#6B6375]">CTR</p>
-                <p className="text-sm font-bold text-[#08060D]">{c.ctr}</p>
+                <p className="text-xs font-bold text-[#08060D]">{c.ctr}</p>
               </div>
               <div>
                 <p className="text-[10px] font-semibold uppercase tracking-[0.08em] text-[#6B6375]">Expiry</p>
-                <p className="text-sm font-medium text-[#08060D]">{c.expiry}</p>
+                <p className="text-xs font-medium text-[#08060D]">{c.expiry}</p>
               </div>
             </div>
           </div>

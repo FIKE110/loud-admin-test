@@ -80,8 +80,8 @@ export default function LiveStreamsPage() {
       {/* ── Header Row ── */}
       <div className="mb-6 flex items-center justify-between">
         <div>
-          <h1 className="text-2xl font-bold text-[#08060D]">Live Streams</h1>
-          <p className="mt-1 text-sm text-[#6B6375]">
+          <h1 className="text-lg sm:text-xl font-bold text-[#08060D]">Live Streams</h1>
+          <p className="mt-1 text-[13px] text-[#6B6375]">
             Monitor and manage real-time streaming content across the platform.
           </p>
         </div>
@@ -91,37 +91,37 @@ export default function LiveStreamsPage() {
       <div className="mb-6 grid grid-cols-3 gap-4">
         <div className="rounded-2xl border border-[#E5E4E7] bg-white p-5 shadow-sm">
           <div className="mb-3 flex items-center justify-between">
-            <span className="text-sm font-medium text-[#6B6375]">Currently Live</span>
+            <span className="text-[13px] font-medium text-[#6B6375]">Currently Live</span>
             <span className="inline-flex items-center gap-1 rounded-full bg-red-100 px-2 py-0.5 text-[11px] font-semibold text-red-700">
               <span className="h-1.5 w-1.5 rounded-full bg-red-500" />
               {liveStreams.length} Live now
             </span>
           </div>
-          <p className="text-2xl font-bold text-[#08060D]">{liveStreams.length}</p>
+          <p className="text-xl font-bold text-[#08060D]">{liveStreams.length}</p>
         </div>
         <div className="rounded-2xl border border-[#E5E4E7] bg-white p-5 shadow-sm">
           <div className="mb-3 flex items-center justify-between">
-            <span className="text-sm font-medium text-[#6B6375]">Total Viewers</span>
+            <span className="text-[13px] font-medium text-[#6B6375]">Total Viewers</span>
             <span className="inline-flex items-center gap-1 rounded-full bg-green-100 px-2 py-0.5 text-[11px] font-semibold text-green-700">
               Active viewers
             </span>
           </div>
-          <p className="text-2xl font-bold text-[#08060D]">{formatNumber(totalViewers)}</p>
+          <p className="text-xl font-bold text-[#08060D]">{formatNumber(totalViewers)}</p>
         </div>
         <div className="rounded-2xl border border-[#E5E4E7] bg-white p-5 shadow-sm">
           <div className="mb-3 flex items-center justify-between">
-            <span className="text-sm font-medium text-[#6B6375]">Streams Today</span>
+            <span className="text-[13px] font-medium text-[#6B6375]">Streams Today</span>
             <span className="inline-flex items-center gap-1 rounded-full bg-green-100 px-2 py-0.5 text-[11px] font-semibold text-green-700">
               +6 vs yesterday
             </span>
           </div>
-          <p className="text-2xl font-bold text-[#08060D]">{streams.length}</p>
+          <p className="text-xl font-bold text-[#08060D]">{streams.length}</p>
         </div>
       </div>
 
       {/* ── Filter Toolbar ── */}
       <div className="mb-5 flex flex-wrap items-center gap-3">
-        <div className="relative w-64">
+        <div className="relative w-full sm:w-64">
           <svg
             className="pointer-events-none absolute left-3.5 top-1/2 h-4 w-4 -translate-y-1/2 text-[#9CA3AF]"
             fill="none" stroke="currentColor" viewBox="0 0 24 24"
@@ -149,7 +149,7 @@ export default function LiveStreamsPage() {
       </div>
 
       {/* ── Live Broadcast Streaming Matrix ── */}
-      <div className="overflow-hidden rounded-xl border border-[#E5E4E7] bg-white">
+      <div className="overflow-x-auto overflow-hidden rounded-xl border border-[#E5E4E7] bg-white">
         <table className="w-full text-left text-xs">
           <thead className="border-b border-[#E5E4E7] bg-[#F8F9FC]">
             <tr>
@@ -165,7 +165,7 @@ export default function LiveStreamsPage() {
           <tbody className="divide-y divide-[#E5E4E7]">
             {pagedStreams.length === 0 ? (
               <tr>
-                <td colSpan={7} className="px-4 py-12 text-center text-sm text-[#6B6375]">
+                <td colSpan={7} className="px-4 py-12 text-center text-xs text-[#6B6375]">
                   No streams found.
                 </td>
               </tr>
@@ -241,8 +241,8 @@ export default function LiveStreamsPage() {
       </div>
 
       {/* ── Pagination ── */}
-      <div className="mt-5 flex items-center justify-between">
-        <p className="text-sm text-[#6B6375]">
+      <div className="mt-5 flex flex-wrap items-center justify-between gap-2">
+        <p className="text-xs text-[#6B6375]">
           Showing {filtered.length === 0 ? 0 : (page - 1) * perPage + 1}
           –{Math.min(page * perPage, filtered.length)} of{" "}
           <span>{filtered.length.toLocaleString()}</span> streams
@@ -252,7 +252,7 @@ export default function LiveStreamsPage() {
             <button
               disabled={page <= 1}
               onClick={() => setPage(page - 1)}
-              className="flex h-8 w-8 items-center justify-center rounded-lg text-sm text-[#6B6375] transition-colors hover:bg-[#E5E4E7] disabled:opacity-30"
+              className="flex h-8 w-8 items-center justify-center rounded-lg text-xs text-[#6B6375] transition-colors hover:bg-[#E5E4E7] disabled:opacity-30"
             >
               <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
@@ -262,7 +262,7 @@ export default function LiveStreamsPage() {
               <span
                 key={p}
                 onClick={() => setPage(p)}
-                className={`flex h-8 w-8 cursor-pointer items-center justify-center rounded-lg text-sm transition-colors ${
+                className={`flex h-8 w-8 cursor-pointer items-center justify-center rounded-lg text-xs transition-colors ${
                   p === page
                     ? "bg-[#2561EE] font-semibold text-white"
                     : "text-[#6B6375] hover:bg-[#E5E4E7]"
@@ -274,7 +274,7 @@ export default function LiveStreamsPage() {
             <button
               disabled={page >= totalPages}
               onClick={() => setPage(page + 1)}
-              className="flex h-8 w-8 items-center justify-center rounded-lg text-sm text-[#6B6375] transition-colors hover:bg-[#E5E4E7] disabled:opacity-30"
+              className="flex h-8 w-8 items-center justify-center rounded-lg text-xs text-[#6B6375] transition-colors hover:bg-[#E5E4E7] disabled:opacity-30"
             >
               <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />

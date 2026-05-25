@@ -18,9 +18,9 @@ const defaultStats: Stat[] = [
 ]
 
 const StatCard = ({ value, label }: Stat) => (
-  <div className="rounded-2xl border border-white/10 bg-white/5 px-6 py-5 backdrop-blur-md">
-    <p className="text-2xl font-bold text-white">{value}</p>
-    <p className="mt-1 text-xs tracking-wide text-white/60">{label}</p>
+  <div className="rounded-2xl border border-white/10 bg-white/5 px-4 py-4 sm:px-6 sm:py-5 backdrop-blur-md">
+    <p className="text-xl sm:text-2xl font-bold text-white">{value}</p>
+    <p className="mt-1 text-[10px] sm:text-xs tracking-wide text-white/60">{label}</p>
   </div>
 )
 
@@ -34,7 +34,7 @@ export default function BrandPanel({
   stats?: Stat[]
 }) {
   return (
-    <div className="relative flex min-h-screen w-1/2 flex-col overflow-hidden bg-[#050F2E] p-12">
+    <div className="relative hidden min-h-screen w-full flex-col overflow-hidden bg-[#050F2E] p-8 sm:p-12 lg:flex lg:w-1/2">
       <div
         aria-hidden="true"
         className="pointer-events-none absolute inset-0"
@@ -60,16 +60,12 @@ export default function BrandPanel({
 
       <div className="relative z-10 flex flex-1 flex-col">
         <div className="flex items-center gap-3">
-          <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#2561EE]">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
-              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
-            </svg>
-          </div>
+          <img src="/logo.png" alt="Loud!" className="h-9 w-9 rounded-full border border-black/20" />
           <span className="text-xl font-bold text-white">Loud!</span>
         </div>
 
-        <div className="mt-24 max-w-md">
-          <h1 className="text-4xl font-bold leading-tight text-white md:text-5xl">
+        <div className="mt-16 sm:mt-24 max-w-md">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight text-white">
             {heading.map((seg, i) =>
               seg.highlight ? (
                 <span key={i} className="text-[#2561EE]">
@@ -80,12 +76,12 @@ export default function BrandPanel({
               ),
             )}
           </h1>
-          <p className="mt-6 text-base leading-relaxed text-white/60">
+          <p className="mt-4 sm:mt-6 text-sm sm:text-base leading-relaxed text-white/60">
             {subtext}
           </p>
         </div>
 
-        <div className="mt-auto grid grid-cols-3 gap-4">
+        <div className="mt-auto grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4">
           {stats.map((stat) => (
             <StatCard key={stat.label} value={stat.value} label={stat.label} />
           ))}

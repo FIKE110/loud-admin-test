@@ -61,15 +61,15 @@ export default function NotificationPage() {
       {/* ── Header Row ── */}
       <div className="mb-6 flex items-center justify-between">
         <div>
-          <h1 className="text-2xl font-bold text-[#08060D]">Notifications</h1>
-          <p className="mt-1 text-sm text-[#6B6375]">
+          <h1 className="text-lg sm:text-xl font-bold text-[#08060D]">Notifications</h1>
+          <p className="mt-1 text-[13px] text-[#6B6375]">
             Platform-wide real-time audit notifications and system alerts.
           </p>
         </div>
         {notifications.length > 0 && (
           <button
             onClick={dismissAll}
-            className="flex items-center gap-2 rounded-xl border border-red-300 bg-white px-5 py-2.5 text-sm font-medium text-red-600 transition-colors hover:bg-red-50"
+            className="flex items-center gap-2 rounded-xl border border-red-300 bg-white px-5 py-2.5 text-xs font-medium text-red-600 transition-colors hover:bg-red-50"
           >
             <X className="h-4 w-4" />
             Dismiss All
@@ -78,7 +78,7 @@ export default function NotificationPage() {
       </div>
 
       {/* ── Summary Bar ── */}
-      <div className="mb-5 flex items-center gap-4 text-sm text-[#6B6375]">
+      <div className="mb-5 flex items-center gap-4 text-xs text-[#6B6375]">
         <span>
           <span className="font-semibold text-[#08060D]">{notifications.length}</span> total
         </span>
@@ -90,7 +90,7 @@ export default function NotificationPage() {
 
       {/* ── Filter Toolbar ── */}
       <div className="mb-5 flex flex-wrap items-center gap-3">
-        <div className="relative w-64">
+        <div className="relative w-full sm:w-64">
           <svg
             className="pointer-events-none absolute left-3.5 top-1/2 h-4 w-4 -translate-y-1/2 text-[#9CA3AF]"
             fill="none" stroke="currentColor" viewBox="0 0 24 24"
@@ -126,11 +126,11 @@ export default function NotificationPage() {
       </div>
 
       {/* ── Notification Feed ── */}
-      <div className="overflow-hidden rounded-xl border border-[#E5E4E7] bg-white">
+      <div className="overflow-x-auto overflow-hidden rounded-xl border border-[#E5E4E7] bg-white">
         {filtered.length === 0 ? (
           <div className="flex flex-col items-center justify-center py-16 text-center">
             <Bell className="mb-3 h-10 w-10 text-[#D1D5DB]" />
-            <p className="text-sm font-medium text-[#6B6375]">All clear</p>
+            <p className="text-xs font-medium text-[#6B6375]">All clear</p>
             <p className="mt-1 text-xs text-[#9CA3AF]">No notifications match your current filters.</p>
           </div>
         ) : (
@@ -167,7 +167,7 @@ export default function NotificationPage() {
 
                 {/* Content */}
                 <div className="flex-1">
-                  <p className="text-sm leading-relaxed text-[#08060D]">{n.text}</p>
+                  <p className="text-xs leading-relaxed text-[#08060D]">{n.text}</p>
                   <p className="mt-1 text-xs text-[#9CA3AF]">{n.time}</p>
                 </div>
 

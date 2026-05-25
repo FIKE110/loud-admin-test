@@ -69,12 +69,12 @@ export default function UsersPage() {
       {/* ── Header Row ── */}
       <div className="mb-6 flex items-center justify-between">
         <div>
-          <h1 className="text-2xl font-bold text-[#08060D]">Users</h1>
-          <p className="mt-1 text-sm text-[#6B6375]">
+          <h1 className="text-lg sm:text-xl font-bold text-[#08060D]">Users</h1>
+          <p className="mt-1 text-[13px] text-[#6B6375]">
             Manage all registered users on the platform.
           </p>
         </div>
-        <button className="flex items-center gap-2 rounded-xl bg-[#2561EE] px-5 py-2.5 text-sm font-semibold text-white transition-opacity hover:opacity-90">
+        <button className="flex items-center gap-2 rounded-xl bg-[#2561EE] px-5 py-2.5 text-xs font-semibold text-white transition-opacity hover:opacity-90">
           <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 5v14m7-7H5" />
           </svg>
@@ -84,7 +84,7 @@ export default function UsersPage() {
 
       {/* ── Filter Toolbar ── */}
       <div className="mb-5 flex flex-wrap items-center gap-3">
-        <div className="relative w-64">
+        <div className="relative w-full sm:w-64">
           <svg
             className="pointer-events-none absolute left-3.5 top-1/2 h-4 w-4 -translate-y-1/2 text-[#9CA3AF]"
             fill="none" stroke="currentColor" viewBox="0 0 24 24"
@@ -131,7 +131,7 @@ export default function UsersPage() {
           <option>This year</option>
         </select>
 
-        <button className="ml-auto flex items-center gap-2 rounded-xl border border-[#E5E4E7] bg-white px-4 py-2.5 text-sm font-medium text-[#08060D] transition-colors hover:bg-[#F8F9FC]">
+        <button className="ml-auto flex items-center gap-2 rounded-xl border border-[#E5E4E7] bg-white px-4 py-2.5 text-xs font-medium text-[#08060D] transition-colors hover:bg-[#F8F9FC]">
           <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M7 11l5 5 5-5M12 4v12" />
           </svg>
@@ -140,8 +140,8 @@ export default function UsersPage() {
       </div>
 
       {/* ── Data Table ── */}
-      <div className="overflow-hidden rounded-xl border border-[#E5E4E7] bg-white">
-        <table className="w-full text-left text-sm">
+      <div className="overflow-x-auto overflow-hidden rounded-xl border border-[#E5E4E7] bg-white">
+        <table className="w-full text-left text-xs">
           <thead className="border-b border-[#E5E4E7] bg-[#F8F9FC]">
             <tr>
               <th className="w-10 px-4 py-3.5">
@@ -223,20 +223,20 @@ export default function UsersPage() {
       </div>
 
       {/* ── Pagination ── */}
-      <div className="mt-5 flex items-center justify-between">
-        <p className="text-sm text-[#6B6375]">Showing 1–10 of 124,831 users</p>
+      <div className="mt-5 flex flex-wrap items-center justify-between gap-2">
+        <p className="text-xs text-[#6B6375]">Showing 1–10 of 124,831 users</p>
         <div className="flex items-center gap-1">
-          <button className="flex h-8 w-8 items-center justify-center rounded-lg text-sm text-[#6B6375] transition-colors hover:bg-[#E5E4E7]">
+          <button className="flex h-8 w-8 items-center justify-center rounded-lg text-xs text-[#6B6375] transition-colors hover:bg-[#E5E4E7]">
             <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
             </svg>
           </button>
-          <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#2561EE] text-sm font-semibold text-white">1</span>
-          <span className="flex h-8 w-8 items-center justify-center rounded-lg text-sm text-[#6B6375] transition-colors hover:bg-[#E5E4E7] cursor-pointer">2</span>
-          <span className="flex h-8 w-8 items-center justify-center rounded-lg text-sm text-[#6B6375] transition-colors hover:bg-[#E5E4E7] cursor-pointer">3</span>
-          <span className="flex h-8 w-8 items-center justify-center text-sm text-[#6B6375]">...</span>
-          <span className="flex h-8 w-8 items-center justify-center rounded-lg text-sm text-[#6B6375] transition-colors hover:bg-[#E5E4E7] cursor-pointer">248</span>
-          <button className="flex h-8 w-8 items-center justify-center rounded-lg text-sm text-[#6B6375] transition-colors hover:bg-[#E5E4E7]">
+          <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#2561EE] text-xs font-semibold text-white">1</span>
+          <span className="flex h-8 w-8 items-center justify-center rounded-lg text-xs text-[#6B6375] transition-colors hover:bg-[#E5E4E7] cursor-pointer">2</span>
+          <span className="flex h-8 w-8 items-center justify-center rounded-lg text-xs text-[#6B6375] transition-colors hover:bg-[#E5E4E7] cursor-pointer">3</span>
+          <span className="flex h-8 w-8 items-center justify-center text-xs text-[#6B6375]">...</span>
+          <span className="flex h-8 w-8 items-center justify-center rounded-lg text-xs text-[#6B6375] transition-colors hover:bg-[#E5E4E7] cursor-pointer">248</span>
+          <button className="flex h-8 w-8 items-center justify-center rounded-lg text-xs text-[#6B6375] transition-colors hover:bg-[#E5E4E7]">
             <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
             </svg>

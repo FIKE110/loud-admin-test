@@ -70,8 +70,8 @@ export default function FinancePage() {
       {/* ── Header Row ── */}
       <div className="mb-6 flex items-center justify-between">
         <div>
-          <h1 className="text-2xl font-bold text-[#08060D]">Finance Overview</h1>
-          <p className="mt-1 text-sm text-[#6B6375]">
+          <h1 className="text-lg sm:text-xl font-bold text-[#08060D]">Finance Overview</h1>
+          <p className="mt-1 text-[13px] text-[#6B6375]">
             Track platform revenue, wallet balances, and transaction activity.
           </p>
         </div>
@@ -204,7 +204,7 @@ export default function FinancePage() {
       </div>
 
       {/* ── Recent Transactions ── */}
-      <div className="rounded-2xl border border-[#E5E4E7] bg-white p-5 shadow-sm">
+      <div className="overflow-x-auto rounded-2xl border border-[#E5E4E7] bg-white p-5 shadow-sm">
         <div className="mb-4 flex items-center justify-between">
           <h3 className="text-sm font-bold text-[#08060D]">Recent Transactions</h3>
           <div className="flex items-center gap-1 rounded-lg border border-[#E5E4E7] p-0.5">
@@ -280,8 +280,8 @@ export default function FinancePage() {
         </table>
 
         {/* Pagination */}
-        <div className="mt-4 flex items-center justify-between border-t border-[#E5E4E7] pt-4">
-          <p className="text-sm text-[#6B6375]">
+        <div className="mt-4 flex flex-wrap items-center justify-between gap-2 border-t border-[#E5E4E7] pt-4">
+          <p className="text-xs text-[#6B6375]">
             Showing {displayed.length === 0 ? 0 : (page - 1) * perPage + 1}
             –{Math.min(page * perPage, displayed.length)} of{" "}
             <span>{displayed.length}</span> transactions
@@ -291,7 +291,7 @@ export default function FinancePage() {
               <button
                 disabled={page <= 1}
                 onClick={() => setPage(page - 1)}
-                className="flex h-7 w-7 items-center justify-center rounded-lg text-sm text-[#6B6375] transition-colors hover:bg-[#E5E4E7] disabled:opacity-30"
+                className="flex h-7 w-7 items-center justify-center rounded-lg text-xs text-[#6B6375] transition-colors hover:bg-[#E5E4E7] disabled:opacity-30"
               >
                 <svg className="h-3.5 w-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
@@ -313,7 +313,7 @@ export default function FinancePage() {
               <button
                 disabled={page >= totalPages}
                 onClick={() => setPage(page + 1)}
-                className="flex h-7 w-7 items-center justify-center rounded-lg text-sm text-[#6B6375] transition-colors hover:bg-[#E5E4E7] disabled:opacity-30"
+                className="flex h-7 w-7 items-center justify-center rounded-lg text-xs text-[#6B6375] transition-colors hover:bg-[#E5E4E7] disabled:opacity-30"
               >
                 <svg className="h-3.5 w-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />

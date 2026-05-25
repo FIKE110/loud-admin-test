@@ -108,8 +108,8 @@ export default function PostsPage() {
       {/* ── Header Row ── */}
       <div className="mb-6 flex items-center justify-between">
         <div>
-          <h1 className="text-2xl font-bold text-[#08060D]">Posts</h1>
-          <p className="mt-1 text-sm text-[#6B6375]">
+          <h1 className="text-lg sm:text-xl font-bold text-[#08060D]">Posts</h1>
+          <p className="mt-1 text-[13px] text-[#6B6375]">
             Moderate all user-generated content across the platform.
           </p>
         </div>
@@ -117,7 +117,7 @@ export default function PostsPage() {
 
       {/* ── Filter Toolbar ── */}
       <div className="mb-5 flex flex-wrap items-center gap-3">
-        <div className="relative w-64">
+        <div className="relative w-full sm:w-64">
           <svg
             className="pointer-events-none absolute left-3.5 top-1/2 h-4 w-4 -translate-y-1/2 text-[#9CA3AF]"
             fill="none" stroke="currentColor" viewBox="0 0 24 24"
@@ -156,7 +156,7 @@ export default function PostsPage() {
           <option value="Audios">Audios</option>
         </select>
 
-        <button className="ml-auto flex items-center gap-2 rounded-xl border border-[#E5E4E7] bg-white px-4 py-2.5 text-sm font-medium text-[#08060D] transition-colors hover:bg-[#F8F9FC]">
+        <button className="ml-auto flex items-center gap-2 rounded-xl border border-[#E5E4E7] bg-white px-4 py-2.5 text-xs font-medium text-[#08060D] transition-colors hover:bg-[#F8F9FC]">
           <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M7 11l5 5 5-5M12 4v12" />
           </svg>
@@ -165,8 +165,8 @@ export default function PostsPage() {
       </div>
 
       {/* ── Data Table ── */}
-      <div className="overflow-hidden rounded-xl border border-[#E5E4E7] bg-white">
-        <table className="w-full text-left text-xs">
+      <div className="overflow-x-auto overflow-hidden rounded-xl border border-[#E5E4E7] bg-white">
+        <table className="w-full text-left text-[11px]">
           <thead className="border-b border-[#E5E4E7] bg-[#F8F9FC]">
             <tr>
               <th className="px-4 py-3.5 text-[11px] font-bold uppercase tracking-[0.08em] text-[#6B6375]">Post / User</th>
@@ -182,7 +182,7 @@ export default function PostsPage() {
           <tbody className="divide-y divide-[#E5E4E7]">
             {pagedPosts.length === 0 ? (
               <tr>
-                <td colSpan={8} className="px-4 py-12 text-center text-sm text-[#6B6375]">
+                <td colSpan={8} className="px-4 py-12 text-center text-xs text-[#6B6375]">
                   No posts found.
                 </td>
               </tr>
@@ -282,8 +282,8 @@ export default function PostsPage() {
       </div>
 
       {/* ── Pagination ── */}
-      <div className="mt-5 flex items-center justify-between">
-        <p className="text-sm text-[#6B6375]">
+      <div className="mt-5 flex flex-wrap items-center justify-between gap-2">
+        <p className="text-xs text-[#6B6375]">
           Showing {filtered.length === 0 ? 0 : (page - 1) * perPage + 1}
           –{Math.min(page * perPage, filtered.length)} of{" "}
           <span>{filtered.length.toLocaleString()}</span> posts
@@ -293,7 +293,7 @@ export default function PostsPage() {
             <button
               disabled={page <= 1}
               onClick={() => setPage(page - 1)}
-              className="flex h-8 w-8 items-center justify-center rounded-lg text-sm text-[#6B6375] transition-colors hover:bg-[#E5E4E7] disabled:opacity-30"
+              className="flex h-8 w-8 items-center justify-center rounded-lg text-xs text-[#6B6375] transition-colors hover:bg-[#E5E4E7] disabled:opacity-30"
             >
               <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
@@ -303,7 +303,7 @@ export default function PostsPage() {
               <span
                 key={p}
                 onClick={() => setPage(p)}
-                className={`flex h-8 w-8 cursor-pointer items-center justify-center rounded-lg text-sm transition-colors ${
+                className={`flex h-8 w-8 cursor-pointer items-center justify-center rounded-lg text-xs transition-colors ${
                   p === page
                     ? "bg-[#2561EE] font-semibold text-white"
                     : "text-[#6B6375] hover:bg-[#E5E4E7]"
@@ -315,7 +315,7 @@ export default function PostsPage() {
             <button
               disabled={page >= totalPages}
               onClick={() => setPage(page + 1)}
-              className="flex h-8 w-8 items-center justify-center rounded-lg text-sm text-[#6B6375] transition-colors hover:bg-[#E5E4E7] disabled:opacity-30"
+              className="flex h-8 w-8 items-center justify-center rounded-lg text-xs text-[#6B6375] transition-colors hover:bg-[#E5E4E7] disabled:opacity-30"
             >
               <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -337,7 +337,7 @@ export default function PostsPage() {
           >
             {/* Modal Header */}
             <div className="flex items-center justify-between border-b border-[#E5E4E7] px-6 py-4">
-              <h2 className="text-lg font-bold text-[#08060D]">Review Post</h2>
+              <h2 className="text-base font-bold text-[#08060D]">Review Post</h2>
               <button
                 onClick={() => setReviewPost(null)}
                 className="flex h-8 w-8 items-center justify-center rounded-lg text-[#6B6375] transition-colors hover:bg-[#F8F9FC]"
@@ -352,12 +352,12 @@ export default function PostsPage() {
             <div className="space-y-5 px-6 py-5">
               {/* Author & Post Info */}
               <div className="flex items-start gap-4">
-                <div className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-full text-sm font-bold text-white ${reviewPost.authorColor}`}>
+                <div className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-full text-xs font-bold text-white ${reviewPost.authorColor}`}>
                   {reviewPost.authorInitials}
                 </div>
                 <div className="min-w-0 flex-1">
                   <p className="font-semibold text-[#08060D]">{reviewPost.authorName}</p>
-                  <p className="mt-1 text-sm leading-relaxed text-[#08060D]">{reviewPost.caption}</p>
+                  <p className="mt-1 text-xs leading-relaxed text-[#08060D]">{reviewPost.caption}</p>
                   <div className="mt-2 flex items-center gap-2">
                     <span
                       className={`inline-block rounded-full px-2.5 py-0.5 text-[11px] font-semibold text-white ${
@@ -384,7 +384,7 @@ export default function PostsPage() {
                   <svg className="mx-auto mb-2 h-10 w-10 text-[#D1D5DB]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
                   </svg>
-                  <p className="text-sm text-[#9CA3AF]">
+                  <p className="text-xs text-[#9CA3AF]">
                     {reviewPost.type === "Image" ? "Image preview" :
                      reviewPost.type === "Video" ? "Video player" :
                      reviewPost.type === "Audio" ? "Audio waveform" :
@@ -419,7 +419,7 @@ export default function PostsPage() {
                   </p>
                   <ul className="space-y-1.5">
                     {(reportReasons[reviewPost.id] ?? ["Policy violation"]).map((reason, i) => (
-                      <li key={i} className="flex items-center gap-2 rounded-lg bg-red-50 px-3 py-2 text-sm text-red-700">
+                      <li key={i} className="flex items-center gap-2 rounded-lg bg-red-50 px-3 py-2 text-xs text-red-700">
                         <svg className="h-3.5 w-3.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                         </svg>
@@ -433,16 +433,16 @@ export default function PostsPage() {
 
             {/* Modal Footer */}
             <div className="flex items-center justify-end gap-3 border-t border-[#E5E4E7] px-6 py-4">
+<button
+              onClick={() => setReviewPost(null)}
+              className="rounded-xl border border-[#E5E4E7] bg-white px-5 py-2.5 text-xs font-medium text-[#08060D] transition-colors hover:bg-[#F8F9FC]"
+            >
+              Dismiss
+            </button>
+            {reviewPost.status === "Flagged" && (
               <button
-                onClick={() => setReviewPost(null)}
-                className="rounded-xl border border-[#E5E4E7] bg-white px-5 py-2.5 text-sm font-medium text-[#08060D] transition-colors hover:bg-[#F8F9FC]"
-              >
-                Dismiss
-              </button>
-              {reviewPost.status === "Flagged" && (
-                <button
-                  onClick={() => handleDelete(reviewPost.id)}
-                  className="rounded-xl border border-red-300 bg-white px-5 py-2.5 text-sm font-medium text-red-600 transition-colors hover:bg-red-50"
+                onClick={() => handleDelete(reviewPost.id)}
+                className="rounded-xl border border-red-300 bg-white px-5 py-2.5 text-xs font-medium text-red-600 transition-colors hover:bg-red-50"
                 >
                   Delete Post
                 </button>
