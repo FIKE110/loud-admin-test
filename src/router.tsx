@@ -4,6 +4,7 @@ import ResetPasswordPage from "./components/ResetPasswordPage"
 import DashboardLayout from "./components/DashboardLayout"
 import DashboardPage from "./components/DashboardPage"
 import UsersPage from "./components/UsersPage"
+import PostsPage from "./components/PostsPage"
 import NotFound from "./components/NotFound"
 
 export const router = createBrowserRouter([
@@ -21,6 +22,7 @@ export const router = createBrowserRouter([
     children: [
       { index: true, element: <DashboardPage /> },
       { path: "users", element: <UsersPage /> },
+      { path: "posts", element: <PostsPage /> },
     ],
   },
   {
