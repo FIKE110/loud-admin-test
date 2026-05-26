@@ -1,4 +1,5 @@
-import { Link, useLocation } from "react-router-dom"
+import { useState } from "react"
+import { Link, useLocation, useNavigate } from "react-router-dom"
 import {
   LayoutDashboard,
   Users,
@@ -17,6 +18,7 @@ import {
   Gift,
   Megaphone,
   Settings,
+  LogOut,
 } from "lucide-react"
 
 type NavItem = {
@@ -94,6 +96,8 @@ type SidebarProps = {
 
 export default function Sidebar({ isOpen, onClose }: SidebarProps) {
   const { pathname } = useLocation()
+  const navigate = useNavigate()
+  const [showProfileMenu, setShowProfileMenu] = useState(false)
 
   const sidebar = (
     <aside className="flex h-full w-[256px] flex-col bg-[#06102F]">
@@ -144,9 +148,13 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
         ))}
       </nav>
 
-      <div className="border-t border-white/10 px-4 py-3">
-        <div className="flex items-center gap-2.5">
-          <div className="flex h-7 w-7 items-center justify-center rounded-full bg-gradient-to-br from-[#2561EE] to-[#1A4FCC] text-[10px] font-bold text-white">
+      <div className="relative border-t border-white/10 px-4 py-3">
+        <button
+          onClick={() => setShowProfileMenu(!showProfileMenu)}
+          onBlur={() => setTimeout(() => setShowProfileMenu(false), 150)}
+          className="flex w-full items-center gap-2.5 text-left"
+        >
+          <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-[#2561EE] to-[#1A4FCC] text-[10px] font-bold text-white">
             IM
           </div>
           <div className="flex-1 min-w-0">
@@ -156,7 +164,19 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
           <svg className="h-3.5 w-3.5 shrink-0 text-white/30" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 5v14m7-7H5" />
           </svg>
-        </div>
+        </button>
+
+        {showProfileMenu && (
+          <div className="absolute bottom-full left-2 right-2 mb-2 overflow-hidden rounded-xl border border-white/10 bg-[#0C1A4A] shadow-xl">
+            <button
+              onClick={() => { setShowProfileMenu(false); navigate("/login") }}
+              className="flex w-full items-center gap-2.5 px-4 py-3 text-xs font-medium text-white/70 transition-colors hover:bg-white/5 hover:text-white"
+            >
+              <LogOut className="h-3.5 w-3.5" />
+              Logout
+            </button>
+          </div>
+        )}
       </div>
     </aside>
   )

@@ -18,6 +18,7 @@ import GiftTransactionsPage from "./components/GiftTransactionsPage"
 import AdvertsPage from "./components/AdvertsPage"
 import AnalyticsPage from "./components/AnalyticsPage"
 import NotificationPage from "./components/NotificationPage"
+import SettingsPage from "./components/SettingsPage"
 import NotFound from "./components/NotFound"
 
 export const router = createBrowserRouter([
@@ -49,6 +50,7 @@ export const router = createBrowserRouter([
       { path: "adverts", element: <AdvertsPage /> },
       { path: "analytics", element: <AnalyticsPage /> },
       { path: "notification", element: <NotificationPage /> },
+      { path: "settings", element: <SettingsPage /> },
     ],
   },
   {
