@@ -78,7 +78,7 @@ export default function FinancePage() {
       </div>
 
       {/* ── KPI Cards ── */}
-      <div className="mb-6 grid grid-cols-4 gap-4">
+      <div className="mb-6 grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-4">
         <div className="rounded-2xl border border-[#E5E4E7] bg-white p-5 shadow-sm">
           <p className="mb-1 text-xs font-semibold uppercase tracking-[0.08em] text-[#6B6375]">Coin Wallet</p>
           <p className="text-xl font-bold text-[#08060D]">₦48,320,500</p>
@@ -108,7 +108,7 @@ export default function FinancePage() {
       </div>
 
       {/* ── Analytics & Visualizations ── */}
-      <div className="mb-6 flex gap-4">
+      <div className="mb-6 flex flex-col gap-4 lg:flex-row">
         {/* Monthly Funding Volume */}
         <div className="flex-1 rounded-2xl border border-[#E5E4E7] bg-white p-5 shadow-sm">
           <div className="mb-4 flex items-center justify-between">
@@ -167,7 +167,7 @@ export default function FinancePage() {
         </div>
 
         {/* Wallet Distribution Donut */}
-        <div className="w-[280px] rounded-2xl border border-[#E5E4E7] bg-white p-5 shadow-sm">
+        <div className="w-full rounded-2xl border border-[#E5E4E7] bg-white p-5 shadow-sm lg:w-[280px]">
           <h3 className="mb-4 text-sm font-bold text-[#08060D]">Wallet Distribution</h3>
           <svg viewBox="0 0 200 200" className="mx-auto w-48 h-48">
             <g transform="translate(100, 100)">

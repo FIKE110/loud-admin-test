@@ -29,7 +29,7 @@ const initialNotifications: Notification[] = [
 const typeLabels: Record<NotificationType, string> = {
   alert: "Alert",
   info: "Info",
-  stream: "Live Stream",
+  stream: "Live",
   admin: "Admin",
   block: "Block",
 }
@@ -72,7 +72,8 @@ export default function NotificationPage() {
             className="flex items-center gap-2 rounded-xl border border-red-300 bg-white px-5 py-2.5 text-xs font-medium text-red-600 transition-colors hover:bg-red-50"
           >
             <X className="h-4 w-4" />
-            Dismiss All
+            <span className="hidden sm:inline">Dismiss All</span>
+            <span className="sm:hidden">Dismiss</span>
           </button>
         )}
       </div>
@@ -114,7 +115,7 @@ export default function NotificationPage() {
           <option value="All">All Types</option>
           <option value="alert">Alert</option>
           <option value="info">Info</option>
-          <option value="stream">Live Stream</option>
+          <option value="stream">Live</option>
           <option value="admin">Admin</option>
           <option value="block">Block</option>
         </select>

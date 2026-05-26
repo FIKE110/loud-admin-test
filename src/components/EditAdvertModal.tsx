@@ -77,7 +77,7 @@ export default function EditAdvertModal({ campaign, onClose }: EditAdvertModalPr
                 className="flex w-full items-center justify-between rounded-xl border border-[#E5E4E7] bg-white px-4 py-3 text-xs text-[#08060D] outline-none transition-colors focus:border-[#2561EE] focus:ring-1 focus:ring-[#2561EE]"
               >
                 <span>{status}</span>
-                <ChevronDown className={`h-3.5 w-3.5 text-[#6B6375] transition-transform ${showStatus ? "rotate-180" : ""}`} />
+                <ChevronDown className={`mr-1.5 h-3.5 w-3.5 text-[#6B6375] transition-transform ${showStatus ? "rotate-180" : ""}`} />
               </button>
               {showStatus && (
                 <div className="absolute z-20 mt-1 w-full overflow-hidden rounded-xl border border-[#E5E4E7] bg-white shadow-lg">

@@ -114,7 +114,7 @@ export default function ModQueuePage() {
       </div>
 
       {/* ── Metric Overview Cards ── */}
-      <div className="mb-6 grid grid-cols-4 gap-4">
+      <div className="mb-6 grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-4">
         <div className="rounded-2xl border border-[#E5E4E7] bg-white p-5 shadow-sm">
           <p className="mb-1 text-[13px] font-medium text-[#6B6375]">Pending</p>
           <div className="flex items-center gap-2">

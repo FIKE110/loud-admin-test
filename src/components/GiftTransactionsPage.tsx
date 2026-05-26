@@ -77,7 +77,7 @@ export default function GiftTransactionsPage() {
       </div>
 
       {/* ── Metric Cards ── */}
-      <div className="mb-6 grid grid-cols-4 gap-4">
+      <div className="mb-6 grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-4">
         <div className="rounded-2xl border border-[#E5E4E7] bg-white p-5 shadow-sm">
           <p className="mb-1 text-xs font-semibold uppercase tracking-[0.08em] text-[#6B6375]">Total Funded</p>
           <p className="text-xl font-bold text-[#08060D]">₦31.8M</p>

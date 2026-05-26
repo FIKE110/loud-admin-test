@@ -88,7 +88,7 @@ export default function LiveStreamsPage() {
       </div>
 
       {/* ── Live Performance Summary Cards ── */}
-      <div className="mb-6 grid grid-cols-3 gap-4">
+      <div className="mb-6 grid grid-cols-1 gap-4 sm:grid-cols-3">
         <div className="rounded-2xl border border-[#E5E4E7] bg-white p-5 shadow-sm">
           <div className="mb-3 flex items-center justify-between">
             <span className="text-[13px] font-medium text-[#6B6375]">Currently Live</span>
