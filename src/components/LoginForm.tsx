@@ -8,13 +8,16 @@ export default function LoginForm() {
       <div className="mx-auto w-full max-w-sm">
         <div className="mb-6 flex items-center gap-2 lg:hidden">
           <img src="/logo.png" alt="Loud!" className="h-8 w-8 rounded-full border border-black/20" />
-          <span className="text-lg font-bold text-[#08060D]">Loud!</span>
+          <span className="text-lg font-bold tracking-[-0.02em]">
+            <span className="text-[#08060D]">Loud</span>
+            <span className="text-[#2561EE]">!</span>
+          </span>
         </div>
         <span className="text-[10px] sm:text-xs font-semibold tracking-[0.2em] text-[#2561EE]">
           ADMIN PORTAL
         </span>
 
-        <h2 className="mt-4 text-2xl sm:text-3xl font-bold text-[#08060D]">
+        <h2 className="mt-4 text-2xl sm:text-3xl font-extrabold tracking-tight text-[#08060D]">
           Welcome back
         </h2>
         <p className="mt-2 text-[13px] sm:text-sm text-[#6B6375]">
@@ -25,7 +28,7 @@ export default function LoginForm() {
           <div>
             <label
               htmlFor="email"
-              className="mb-1.5 block text-xs sm:text-sm font-medium text-[#08060D]"
+              className="mb-1.5 block text-xs sm:text-sm font-medium tracking-wide text-[#08060D]"
             >
               Email address
             </label>
@@ -58,7 +61,7 @@ export default function LoginForm() {
             <div className="flex items-center justify-between">
               <label
                 htmlFor="password"
-                className="mb-1.5 block text-xs sm:text-sm font-medium text-[#08060D]"
+                className="mb-1.5 block text-xs sm:text-sm font-medium tracking-wide text-[#08060D]"
               >
                 Password
               </label>
@@ -108,7 +111,7 @@ export default function LoginForm() {
         <div className="mt-6 sm:mt-8 rounded-xl border border-[#E5E4E7] bg-[#F8F9FC] p-3 sm:p-4">
           <div className="flex items-start gap-3">
             <svg
-              className="mt-0.5 h-4 w-4 shrink-0 text-[#6B6375]"
+              className="mt-0.5 h-4 w-4 shrink-0 text-[#F59E0B]"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -120,7 +123,7 @@ export default function LoginForm() {
                 d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"
               />
             </svg>
-            <p className="text-[11px] sm:text-xs leading-relaxed text-[#6B6375]">
+            <p className="text-[9px] sm:text-[10px] leading-snug text-[#6B6375]">
               Admin access is by invitation only. Contact a super admin to
               request access. Unauthorized login attempts are logged.
             </p>

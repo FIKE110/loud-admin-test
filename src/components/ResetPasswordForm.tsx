@@ -6,13 +6,16 @@ export default function ResetPasswordForm() {
       <div className="mx-auto w-full max-w-sm">
         <div className="mb-6 flex items-center gap-2 lg:hidden">
           <img src="/logo.png" alt="Loud!" className="h-8 w-8 rounded-full border border-black/20" />
-          <span className="text-lg font-bold text-[#08060D]">Loud!</span>
+          <span className="text-lg font-bold tracking-[-0.02em]">
+            <span className="text-[#08060D]">Loud</span>
+            <span className="text-[#2561EE]">!</span>
+          </span>
         </div>
         <span className="text-[10px] sm:text-xs font-semibold tracking-[0.2em] text-[#2561EE]">
           PASSWORD RESET
         </span>
 
-        <h2 className="mt-4 text-2xl sm:text-3xl font-bold text-[#08060D]">
+        <h2 className="mt-4 text-2xl sm:text-3xl font-extrabold tracking-tight text-[#08060D]">
           Reset password
         </h2>
         <p className="mt-2 text-[13px] sm:text-sm text-[#6B6375]">
@@ -23,7 +26,7 @@ export default function ResetPasswordForm() {
           <div>
             <label
               htmlFor="admin-email"
-              className="mb-1.5 block text-xs sm:text-sm font-medium text-[#08060D]"
+              className="mb-1.5 block text-xs sm:text-sm font-medium tracking-wide text-[#08060D]"
             >
               Admin Email Address
             </label>

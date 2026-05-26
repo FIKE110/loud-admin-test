@@ -99,7 +99,10 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
     <aside className="flex h-full w-[256px] flex-col bg-[#06102F]">
         <div className="flex items-center gap-2.5 px-5 pt-4 pb-3">
           <img src="/logo.png" alt="Loud!" className="h-7 w-7 rounded-full border border-black/20" />
-          <span className="text-sm font-bold text-white">Loud!</span>
+          <span className="text-sm font-bold tracking-[-0.02em]">
+            <span className="text-white">Loud</span>
+            <span className="text-[#2561EE]">!</span>
+          </span>
         </div>
 
       <nav className="flex-1 overflow-y-auto px-2 pb-2 scrollbar-thin scrollbar-track-transparent scrollbar-thumb-white/10">
