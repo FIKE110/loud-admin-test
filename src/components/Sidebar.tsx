@@ -107,11 +107,11 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
 
       <nav className="flex-1 overflow-y-auto px-2 pb-2 scrollbar-thin scrollbar-track-transparent scrollbar-thumb-white/10">
         {sections.map((section) => (
-          <div key={section.label} className="mb-2.5">
-            <p className="mb-1 px-2 text-[10px] font-bold uppercase tracking-[0.12em] text-white/60">
+          <div key={section.label} className="mb-4">
+            <p className="mb-1.5 px-2 text-[10px] font-bold uppercase tracking-[0.12em] text-white/60">
               {section.label}
             </p>
-            <div className="space-y-0.5">
+            <div className="space-y-1">
               {section.items.map((item) => {
                 const isActive = pathname === item.path
                 return (
@@ -119,7 +119,7 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
                     key={item.path}
                     to={item.path}
                     onClick={onClose}
-                    className={`flex items-center gap-2.5 rounded-lg px-2.5 py-1.5 text-sm font-semibold transition-colors ${
+                    className={`flex items-center gap-2.5 rounded-lg px-2.5 py-2 text-sm font-semibold transition-colors ${
                       isActive
                         ? "bg-white/10 text-white"
                         : "text-white/70 hover:bg-white/5 hover:text-white"

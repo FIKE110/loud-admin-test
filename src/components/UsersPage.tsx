@@ -74,12 +74,6 @@ export default function UsersPage() {
             Manage all registered users on the platform.
           </p>
         </div>
-        <button className="flex items-center gap-2 rounded-xl bg-[#2561EE] px-5 py-2.5 text-xs font-semibold text-white transition-opacity hover:opacity-90">
-          <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 5v14m7-7H5" />
-          </svg>
-          Invite Admin
-        </button>
       </div>
 
       {/* ── Filter Toolbar ── */}
